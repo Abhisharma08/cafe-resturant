@@ -20,13 +20,13 @@ const HubspotUpsertInputSchema = z.object({
   city: z.string().optional().describe("The contact's city."),
   requirement: z
     .enum([
-    "Dining Tables & Chairs",
-    "Booth & Sofa Seating",
+    "Casual Dining Tables",
+    "Booth & Lounge Seating",
     "Outdoor & Patio Furniture",
     ])
     .optional()
     .describe("The contact's furniture requirement."),
-  quantity: z.enum(['3+', '6+', '8+', '12+', '15+', '20+']).optional().describe('The required quantity.'),
+  quantity: z.enum(["3+", "6+", "8+", "12+", "15+", "20+"]).optional().describe('The required quantity.'),
 });
 export type HubspotUpsertInput = z.infer<typeof HubspotUpsertInputSchema>;
 
